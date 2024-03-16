@@ -7,8 +7,8 @@ export function Nav() {
             <img
               src="images/logo@2x.jpg"
               alt=""
-              width={90}
-              height={80}
+              width={30}
+              height={30}
               style={{ borderRadius: 5 }}
             />
           </a>
@@ -27,9 +27,9 @@ export function Nav() {
           </button>
           <div className="collapse navbar-collapse" id="navbars-host">
             <span>
-              <h1 style={{ color: "forestgreen" }}>
+              <h4 style={{ color: "forestgreen" }}>
                 Rahmani Education Trust <br /> Kishanganj
-              </h1>
+              </h4>
             </span>
             <ul className="navbar-nav ml-auto">
               <li className="nav-item active">
