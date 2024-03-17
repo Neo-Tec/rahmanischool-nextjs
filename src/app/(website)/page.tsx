@@ -232,7 +232,7 @@ export default function Home() {
             <div className="col-lg-6 col-md-6 col-12">
               <div className="course-item">
                 <div className="image-blog">
-                  <img src="images/schl.jpg" alt="" className="img-fluid" />
+                  <img src="/images/schl.jpg" alt="" height={300} />
                 </div>
                 <div className="course-br">
                   <div className="course-title">
@@ -256,7 +256,7 @@ export default function Home() {
             <div className="col-lg-6 col-md-6 col-12">
               <div className="course-item">
                 <div className="image-blog">
-                  <img src="images/rekj.jpg" alt="" className="img-fluid" />
+                  <img src="images/rekj.jpg" alt="" height={300} />
                 </div>
                 <div className="course-br">
                   <div className="course-title">
@@ -285,7 +285,7 @@ export default function Home() {
             <div className="col-lg-6 col-md-6 col-12">
               <div className="course-item">
                 <div className="image-blog">
-                  <img src="images/mtq.jpg" alt="" className="img-fluid" />
+                  <img src="images/mtq.jpg" alt="" height={300} />
                 </div>
                 <div className="course-br">
                   <div className="course-title">
@@ -308,7 +308,7 @@ export default function Home() {
             <div className="col-lg-6 col-md-6 col-12">
               <div className="course-item">
                 <div className="image-blog">
-                  <img src="images/mas.jpg" alt="" className="img-fluid" />
+                  <img src="images/mas.jpg" alt="" height={300} />
                 </div>
                 <div className="course-br">
                   <div className="course-title">
