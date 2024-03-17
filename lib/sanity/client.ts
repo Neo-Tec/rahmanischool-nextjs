@@ -20,6 +20,7 @@ import {
   getPageDataQuery,
   //
   allGalleryItemsQuery,
+  allTeachersQuery,
 } from "./groq";
 import { createClient } from "next-sanity";
 
@@ -192,6 +193,13 @@ export async function getPageData(page: string) {
 export async function getGalleryItems() {
   if (client) {
     return (await client.fetch(allGalleryItemsQuery)) || [];
+  }
+  return [];
+}
+
+export async function getTeachers() {
+  if (client) {
+    return (await client.fetch(allTeachersQuery)) || [];
   }
   return [];
 }

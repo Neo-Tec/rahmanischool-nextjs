@@ -1,7 +1,11 @@
 import { Nav } from "@/components/nav";
 import { TopBar } from "@/components/topbar";
+import { getTeachers } from "@cms/client";
+import { urlForImage } from "@cms/image";
 
-export default function Teachers() {
+export default async function Teachers() {
+  const teachers = await getTeachers();
+
   return (
     <>
       <div>
@@ -20,10 +24,44 @@ export default function Teachers() {
         <div id="teachers" className="section wb">
           <div className="container">
             <div className="row">
-              <div className="col-lg-3 col-md-6 col-12">
+              {teachers?.map((teacher: any, index: number) => {
+                const imageProps = teacher?.image
+                  ? urlForImage(teacher?.image)
+                  : null;
+                return (
+                  <div key={index} className="col-lg-3 col-md-6 col-12">
+                    <div className="our-team">
+                      <div className="team-img">
+                        <img src={imageProps?.src} />
+                        <div className="social">
+                          <ul>
+                            <li>
+                              <a href="#" className="fa fa-facebook" />
+                            </li>
+                            <li>
+                              <a href="#" className="fa fa-twitter" />
+                            </li>
+                            <li>
+                              <a href="#" className="fa fa-linkedin" />
+                            </li>
+                            <li>
+                              <a href="#" className="fa fa-skype" />
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div className="team-content">
+                        <h3 className="title">{teacher?.name}</h3>
+                        <span className="post">{teacher?.job_title}</span>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+              {/* <div className="col-lg-3 col-md-6 col-12">
                 <div className="our-team">
                   <div className="team-img">
-                    <img src="images/rp10.jpg" />
+                    <img src="/images/rp10.jpg" />
                     <div className="social">
                       <ul>
                         <li>
@@ -46,8 +84,8 @@ export default function Teachers() {
                     <span className="post">Science teacher</span>
                   </div>
                 </div>
-              </div>
-              <div className="col-lg-3 col-md-6 col-12">
+              </div> */}
+              {/* <div className="col-lg-3 col-md-6 col-12">
                 <div className="our-team">
                   <div className="team-img">
                     <img src="images/rp6.jpg" />
@@ -235,7 +273,7 @@ export default function Teachers() {
                     <span className="post">Islamiyat Teacher</span>
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
             {/* end row */}
           </div>
