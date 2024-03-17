@@ -165,21 +165,21 @@ export async function getLatestPost({ limit = 2 }: any) {
   return [];
 }
 
-export async function getPaginatedSearchQuery(
-  { limit = 5, pageIndex = 0 },
-  query: string
-) {
-  if (client) {
-    return (
-      (await client.fetch(paginatedSearchQuery, {
-        limit: limit,
-        pageIndex: pageIndex,
-        query: query,
-      })) || []
-    );
-  }
-  return [];
-}
+// export async function getPaginatedSearchQuery(
+//   { limit = 5, pageIndex = 0 },
+//   query: string
+// ) {
+//   if (client) {
+//     return (
+//       (await client.fetch(paginatedSearchQuery, {
+//         limit: limit,
+//         pageIndex: pageIndex,
+//         query: query,
+//       })) || []
+//     );
+//   }
+//   return [];
+// }
 
 export async function getPageData(page: string) {
   if (client) {
