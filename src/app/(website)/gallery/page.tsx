@@ -1,8 +1,13 @@
+/* eslint-disable @next/next/no-img-element */
 import { Footer } from "@/components/footer";
 import { Nav } from "@/components/nav";
 import { TopBar } from "@/components/topbar";
+import { getGalleryItems } from "@cms/client";
+import { urlForImage } from "@cms/image";
 
-export default function Gallery() {
+export default async function Gallery() {
+  const galleryItems = await getGalleryItems();
+
   return (
     <>
       <div>
@@ -18,160 +23,39 @@ export default function Gallery() {
         </div>
         <div id="overviews" className="section wb">
           <div className="container">
-            {/* <div className="section-title row text-center">
-              <div className="col-md-8 offset-md-2">
-                <p className="lead">
-                  Lorem Ipsum dolroin gravida nibh vel velit auctor aliquet.
-                  Aenean sollicitudin, lorem quis bibendum auctor, nisi elit
-                  consequat ipsum, nec sagittis sem!
-                </p>
-              </div>
-            </div> */}
-            {/* end title */}
             <hr className="invis" />
             <div className="row">
-              <div className="col-lg-6 col-md-6 col-12">
-                <div className="course-item">
-                  <div className="image-blog">
-                    <img src="images/gl1.jpg" alt="" className="img-fluid" />
-                  </div>
-                  <div className="course-br">
-                    <div className="course-title">
-                      <h2>
-                        <a href="#" title="" />
-                      </h2>
-                    </div>
-                    <div className="course-desc">
-                      <p>
-                        Lorem ipsum door sit amet, fugiat deicata avise id cum,
-                        no quo maiorum intel ogrets geuiat operts elicata libere
-                        avisse id cumlegebat, liber regione eu sit....{" "}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {/* end col */}
-              <div className="col-lg-6 col-md-6 col-12">
-                <div className="course-item">
-                  <div className="image-blog">
-                    <img src="images/gl2.jpg" alt="" className="img-fluid" />
-                  </div>
-                  <div className="course-br">
-                    <div className="course-title">
-                      <h2>
-                        <a href="#" title="" />
-                      </h2>
-                    </div>
-                    <div className="blog-desc">
-                      <p>
-                        Lorem ipsum door sit amet, fugiat deicata avise id cum,
-                        no quo maiorum intel ogrets geuiat operts elicata libere
-                        avisse id cumlegebat, liber regione eu sit....{" "}
-                      </p>
+              {galleryItems?.map((image: any, index: number) => {
+                const imageProps = image?.image
+                  ? urlForImage(image?.image)
+                  : null;
+
+                return (
+                  <div key={index} className="col-lg-4 col-md-6 col-12 mb-4">
+                    <div className="course-item">
+                      <div className="image-blog">
+                        <img
+                          src={imageProps?.src}
+                          alt=""
+                          width={500}
+                          height={200}
+                        />
+                      </div>
+                      <div className="course-br">
+                        <div className="course-title">
+                          <h2>
+                            <a href="#" title="" />
+                          </h2>
+                        </div>
+                        <div className="course-desc">
+                          <p>{image?.description}</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </div>
-              {/* end col */}
+                );
+              })}
             </div>
-            {/* end row */}
-            <hr className="hr3" />
-            <div className="row">
-              <div className="col-lg-6 col-md-6 col-12">
-                <div className="course-item">
-                  <div className="image-blog">
-                    <img src="/images/gl3.jpg" alt="" className="img-fluid" />
-                  </div>
-                  <div className="course-br">
-                    <div className="course-title">
-                      <h2>
-                        <a href="#" title="" />
-                      </h2>
-                    </div>
-                    <div className="course-desc">
-                      <p>
-                        Lorem ipsum door sit amet, fugiat deicata avise id cum,
-                        no quo maiorum intel ogrets geuiat operts elicata libere
-                        avisse id cumlegebat, liber regione eu sit....{" "}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {/* end col */}
-              <div className="col-lg-6 col-md-6 col-12">
-                <div className="course-item">
-                  <div className="image-blog">
-                    <img src="/images/gl4.jpg" alt="" className="img-fluid" />
-                  </div>
-                  <div className="course-br">
-                    <div className="course-title">
-                      <h2>
-                        <a href="#" title="" />
-                      </h2>
-                    </div>
-                    <div className="course-desc">
-                      <p>
-                        Lorem ipsum door sit amet, fugiat deicata avise id cum,
-                        no quo maiorum intel ogrets geuiat operts elicata libere
-                        avisse id cumlegebat, liber regione eu sit....{" "}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {/* end col */}
-            </div>
-            {/* end row */}
-            <hr className="hr3" />
-            <div className="row">
-              <div className="col-lg-6 col-md-6 col-12">
-                <div className="course-item">
-                  <div className="image-blog">
-                    <img src="/images/gl5.jpg" alt="" className="img-fluid" />
-                  </div>
-                  <div className="course-br">
-                    <div className="course-title">
-                      <h2>
-                        <a href="#" title="" />
-                      </h2>
-                    </div>
-                    <div className="course-desc">
-                      <p>
-                        Lorem ipsum door sit amet, fugiat deicata avise id cum,
-                        no quo maiorum intel ogrets geuiat operts elicata libere
-                        avisse id cumlegebat, liber regione eu sit....{" "}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {/* end col */}
-              <div className="col-lg-6 col-md-6 col-12">
-                <div className="course-item">
-                  <div className="image-blog">
-                    <img src="/images/gl18.jpg" alt="" className="img-fluid" />
-                  </div>
-                  <div className="course-br">
-                    <div className="course-title">
-                      <h2>
-                        <a href="#" title="" />
-                      </h2>
-                    </div>
-                    <div className="course-desc">
-                      <p>
-                        Lorem ipsum door sit amet, fugiat deicata avise id cum,
-                        no quo maiorum intel ogrets geuiat operts elicata libere
-                        avisse id cumlegebat, liber regione eu sit....{" "}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              {/* end col */}
-            </div>
-            {/* end row */}
           </div>
           {/* end container */}
         </div>

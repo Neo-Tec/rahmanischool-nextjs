@@ -18,6 +18,8 @@ import {
   socialsQuery,
   allLawyersQuery,
   getPageDataQuery,
+  //
+  allGalleryItemsQuery,
 } from "./groq";
 import { createClient } from "next-sanity";
 
@@ -185,4 +187,11 @@ export async function getPageData(page: string) {
   }
 
   return {};
+}
+
+export async function getGalleryItems() {
+  if (client) {
+    return (await client.fetch(allGalleryItemsQuery)) || [];
+  }
+  return [];
 }
