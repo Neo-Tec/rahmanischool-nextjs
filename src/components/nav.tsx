@@ -24,8 +24,8 @@ export function Nav() {
               <img
                 src="images/logo@2x.jpg"
                 alt=""
-                width={30}
-                height={30}
+                width={70}
+                height={70}
                 style={{ borderRadius: 5 }}
               />
             </a>

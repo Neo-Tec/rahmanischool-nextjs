@@ -31,7 +31,11 @@ export default function Home() {
             <div
               id="home"
               className="first-section"
-              style={{ backgroundImage: 'url("images/home1.jpg")' }}
+              style={{
+                backgroundImage: 'url("images/home1.jpg")',
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
             >
               <div className="dtab">
                 <div className="container">
@@ -42,7 +46,7 @@ export default function Home() {
                           <strong>Rahmani</strong> Public School
                         </h2>
                         <p className="lead">Education is a part of life </p>
-                        <a href="#" className="hover-btn-new">
+                        <a href="/contact" className="hover-btn-new">
                           <span>Contact Us</span>
                         </a>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -63,7 +67,11 @@ export default function Home() {
             <div
               id="home"
               className="first-section"
-              style={{ backgroundImage: 'url("images/mat1.jpg")' }}
+              style={{
+                backgroundImage: 'url("images/mat1.jpg")',
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
             >
               <div className="dtab">
                 <div className="container">
@@ -80,11 +88,11 @@ export default function Home() {
                           {" "}
                         </p>
                         <h3 /> <p />
-                        <a href="#" className="hover-btn-new">
+                        <a href="/contact" className="hover-btn-new">
                           <span>Contact Us</span>
                         </a>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        <a href="#" className="hover-btn-new">
+                        <a href="/blog" className="hover-btn-new">
                           <span>Read More</span>
                         </a>
                       </div>
@@ -101,7 +109,11 @@ export default function Home() {
             <div
               id="home"
               className="first-section"
-              style={{ backgroundImage: 'url("images/gl26.jpg")' }}
+              style={{
+                backgroundImage: 'url("images/gl26.jpg")',
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
             >
               <div className="dtab">
                 <div className="container">
@@ -118,7 +130,7 @@ export default function Home() {
                           {" "}
                         </p>
                         <h3>Suhail </h3> <p />
-                        <a href="#" className="hover-btn-new">
+                        <a href="/contact" className="hover-btn-new">
                           <span>Contact Us</span>
                         </a>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -139,7 +151,11 @@ export default function Home() {
             <div
               id="home"
               className="first-section"
-              style={{ backgroundImage: 'url("images/rahani3.jpg")' }}
+              style={{
+                backgroundImage: 'url("images/rahani3.jpg")',
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
             >
               <div className="dtab">
                 <div className="container">
@@ -157,7 +173,7 @@ export default function Home() {
                           be-and must be-made compatible with the welfare of all
                           humanity.
                         </p>
-                        <a href="#" className="hover-btn-new">
+                        <a href="/contact" className="hover-btn-new">
                           <span>Contact Us</span>
                         </a>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -698,7 +714,11 @@ export default function Home() {
       <div
         id="testimonials"
         className="parallax section db parallax-off"
-        style={{ backgroundImage: 'url("images/parallax_04.jpg")' }}
+        style={{
+          backgroundImage: 'url("images/parallax_04.jpg")',
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
       >
         <div className="container">
           <div className="section-title text-center">
