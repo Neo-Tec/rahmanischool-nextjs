@@ -1,9 +1,13 @@
 import { Footer } from "@/components/footer";
 import { Nav } from "@/components/nav";
 import { TopBar } from "@/components/topbar";
+import { getBlogs } from "@cms/client";
+import { urlForImage } from "@cms/image";
 
 /* eslint-disable @next/next/no-img-element */
-export default function Blog() {
+export default async function Blog() {
+  const blogs = await getBlogs();
+
   return (
     <>
       <div>
@@ -29,180 +33,44 @@ export default function Blog() {
             {/* end title */}
             <hr className="invis" />
             <div className="row">
-              <div className="col-lg-4 col-md-6 col-12">
-                <div className="blog-item">
-                  <div className="image-blog">
-                    <img src="images/bk1.jpg " alt="" className="img-fluid" />
+              {blogs?.map((blog: any, index: number) => {
+                const imageProps = blog?.image
+                  ? urlForImage(blog?.image)
+                  : null;
+
+                return (
+                  <div key={index} className="col-lg-4 col-md-6 col-12 mb-4">
+                    <div className="blog-item">
+                      <div className="image-blog">
+                        <img
+                          src={imageProps?.src}
+                          alt=""
+                          className="img-fluid"
+                        />
+                      </div>
+                      <div className="meta-info-blog">
+                        <span>
+                          <i className="fa fa-calendar" />{" "}
+                          <a href="#">
+                            {new Date(blog?.publishedAt)?.toDateString()}
+                          </a>{" "}
+                        </span>
+                      </div>
+                      <div className="blog-title">
+                        <h2>
+                          <a href="#" title="">
+                            {blog?.title}
+                          </a>
+                        </h2>
+                      </div>
+                      <div className="blog-desc">
+                        <p>{blog?.description}</p>
+                      </div>
+                    </div>
                   </div>
-                  <div className="meta-info-blog">
-                    <span>
-                      <i className="fa fa-calendar" />{" "}
-                      <a href="#">May 11, 2015</a>{" "}
-                    </span>
-                  </div>
-                  <div className="blog-title">
-                    <h2>
-                      <a href="#" title="">
-                        perferendis doloribus asperiores.
-                      </a>
-                    </h2>
-                  </div>
-                  <div className="blog-desc">
-                    <p>
-                      Lorem ipsum door sit amet, fugiat deicata avise id cum, no
-                      quo maiorum intel ogrets geuiat operts elicata libere
-                      avisse id cumlegebat, liber regione eu sit....{" "}
-                    </p>
-                  </div>
-                </div>
-              </div>
-              {/* end col */}
-              <div className="col-lg-4 col-md-6 col-12">
-                <div className="blog-item">
-                  <div className="image-blog">
-                    <img src="images/bk2.jpg" alt="" className="img-fluid" />
-                  </div>
-                  <div className="meta-info-blog">
-                    <span>
-                      <i className="fa fa-calendar" />{" "}
-                      <a href="#">May 11, 2015</a>{" "}
-                    </span>
-                  </div>
-                  <div className="blog-title">
-                    <h2>
-                      <a href="#" title="">
-                        perferendis doloribus asperiores.
-                      </a>
-                    </h2>
-                  </div>
-                  <div className="blog-desc">
-                    <p>
-                      Lorem ipsum door sit amet, fugiat deicata avise id cum, no
-                      quo maiorum intel ogrets geuiat operts elicata libere
-                      avisse id cumlegebat, liber regione eu sit....{" "}
-                    </p>
-                  </div>
-                </div>
-              </div>
-              {/* end col */}
-              <div className="col-lg-4 col-md-6 col-12">
-                <div className="blog-item">
-                  <div className="image-blog">
-                    <img src="images/bk3.jpg" alt="" className="img-fluid" />
-                  </div>
-                  <div className="meta-info-blog">
-                    <span>
-                      <i className="fa fa-calendar" />{" "}
-                      <a href="#">May 11, 2015</a>{" "}
-                    </span>
-                  </div>
-                  <div className="blog-title">
-                    <h2>
-                      <a href="#" title="">
-                        perferendis doloribus asperiores.
-                      </a>
-                    </h2>
-                  </div>
-                  <div className="blog-desc">
-                    <p>
-                      Lorem ipsum door sit amet, fugiat deicata avise id cum, no
-                      quo maiorum intel ogrets geuiat operts elicata libere
-                      avisse id cumlegebat, liber regione eu sit....{" "}
-                    </p>
-                  </div>
-                </div>
-              </div>
-              {/* end col */}
+                );
+              })}
             </div>
-            {/* end row */}
-            <hr className="hr3" />
-            <div className="row">
-              <div className="col-lg-4 col-md-6 col-12">
-                <div className="blog-item">
-                  <div className="image-blog">
-                    <img src="images/bk4.jpg" alt="" className="img-fluid" />
-                  </div>
-                  <div className="meta-info-blog">
-                    <span>
-                      <i className="fa fa-calendar" />{" "}
-                      <a href="#">May 11, 2015</a>{" "}
-                    </span>
-                  </div>
-                  <div className="blog-title">
-                    <h2>
-                      <a href="#" title="">
-                        perferendis doloribus asperiores.
-                      </a>
-                    </h2>
-                  </div>
-                  <div className="blog-desc">
-                    <p>
-                      Lorem ipsum door sit amet, fugiat deicata avise id cum, no
-                      quo maiorum intel ogrets geuiat operts elicata libere
-                      avisse id cumlegebat, liber regione eu sit....{" "}
-                    </p>
-                  </div>
-                </div>
-              </div>
-              {/* end col */}
-              <div className="col-lg-4 col-md-6 col-12">
-                <div className="blog-item">
-                  <div className="image-blog">
-                    <img src="images/bk6.jpg" alt="" className="img-fluid" />
-                  </div>
-                  <div className="meta-info-blog">
-                    <span>
-                      <i className="fa fa-calendar" />{" "}
-                      <a href="#">May 11, 2015</a>{" "}
-                    </span>
-                  </div>
-                  <div className="blog-title">
-                    <h2>
-                      <a href="#" title="">
-                        perferendis doloribus asperiores.
-                      </a>
-                    </h2>
-                  </div>
-                  <div className="blog-desc">
-                    <p>
-                      Lorem ipsum door sit amet, fugiat deicata avise id cum, no
-                      quo maiorum intel ogrets geuiat operts elicata libere
-                      avisse id cumlegebat, liber regione eu sit....{" "}
-                    </p>
-                  </div>
-                </div>
-              </div>
-              {/* end col */}
-              <div className="col-lg-4 col-md-6 col-12">
-                <div className="blog-item">
-                  <div className="image-blog">
-                    <img src="images/bk8.jpg" alt="" className="img-fluid" />
-                  </div>
-                  <div className="meta-info-blog">
-                    <span>
-                      <i className="fa fa-calendar" />{" "}
-                      <a href="#">May 11, 2015</a>{" "}
-                    </span>
-                  </div>
-                  <div className="blog-title">
-                    <h2>
-                      <a href="#" title="">
-                        perferendis doloribus asperiores.
-                      </a>
-                    </h2>
-                  </div>
-                  <div className="blog-desc">
-                    <p>
-                      Lorem ipsum door sit amet, fugiat deicata avise id cum, no
-                      quo maiorum intel ogrets geuiat operts elicata libere
-                      avisse id cumlegebat, liber regione eu sit....{" "}
-                    </p>
-                  </div>
-                </div>
-              </div>
-              {/* end col */}
-            </div>
-            {/* end row */}
           </div>
           {/* end container */}
         </div>

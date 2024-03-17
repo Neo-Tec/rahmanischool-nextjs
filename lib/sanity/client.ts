@@ -21,6 +21,7 @@ import {
   //
   allGalleryItemsQuery,
   allTeachersQuery,
+  allBlogsQuery,
 } from "./groq";
 import { createClient } from "next-sanity";
 
@@ -201,5 +202,13 @@ export async function getTeachers() {
   if (client) {
     return (await client.fetch(allTeachersQuery)) || [];
   }
+  return [];
+}
+
+export async function getBlogs() {
+  if (client) {
+    return (await client.fetch(allBlogsQuery)) || [];
+  }
+
   return [];
 }
