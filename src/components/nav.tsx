@@ -44,9 +44,9 @@ export function Nav() {
             </button>
             <div className="collapse navbar-collapse" id="navbars-host">
               <span>
-                <h4 style={{ color: "forestgreen" }}>
+                <h2 style={{ color: "forestgreen" }}>
                   Rahmani Education Trust <br /> Kishanganj
-                </h4>
+                </h2>
               </span>
               <ul className="navbar-nav ml-auto">
                 {NAV_LINKS.map((nav_item, index) => (
