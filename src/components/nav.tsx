@@ -43,26 +43,10 @@ export function Nav() {
                     About Us
                   </a>
                 </li>
-                <li className="nav-item dropdown">
-                  <a
-                    className="nav-link dropdown-toggle"
-                    href="/gallery"
-                    id="dropdown-a"
-                    data-toggle="dropdown"
-                  >
+                <li className="nav-item">
+                  <a className="nav-link dropdown-toggle" href="/gallery">
                     Gallery{" "}
                   </a>
-                  <div className="dropdown-menu" aria-labelledby="dropdown-a">
-                    <a className="dropdown-item" href="/gallery/1">
-                      Gallery 1
-                    </a>
-                    <a className="dropdown-item" href="/gallery/2">
-                      Gallery 2{" "}
-                    </a>
-                    <a className="dropdown-item" href="/gallery/3">
-                      Gallery 3
-                    </a>
-                  </div>
                 </li>
                 <li className="nav-item dropdown">
                   <a
