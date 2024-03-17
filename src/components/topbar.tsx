@@ -15,7 +15,7 @@ export function TopBar() {
           flexWrap: "wrap",
           alignItems: "center",
           justifyContent: "center",
-          fontSize: "1.4rem",
+          fontSize: dimension.width < 490 ? "0.8rem" : "1.4rem",
         }}
       >
         <a href="tel:+91-9835749990 " style={{ paddingLeft: 9 }}>
@@ -35,6 +35,21 @@ export function TopBar() {
         >
           <i className="fa fa-facebook" />
         </a>
+
+        <div>
+          <a
+            href="https://www.instagram.com/rahmanipublicschool/"
+            style={{ padding: 9 }}
+          >
+            <i className="fa fa-brand fa-instagram" />
+          </a>
+          <a
+            href="https://www.youtube.com/@rahmanipublicschool"
+            style={{ padding: 9 }}
+          >
+            <i className="fa fa-youtube-play" />
+          </a>
+        </div>
       </div>
     </div>
   );
