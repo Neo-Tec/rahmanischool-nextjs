@@ -1,4 +1,20 @@
+"use client";
+
+/* eslint-disable @next/next/no-img-element */
+import { usePathname } from "next/navigation";
+
+const NAV_LINKS = [
+  { name: "Home", slug: "/" },
+  { name: "About Us", slug: "/about" },
+  { name: "Gallery", slug: "/gallery" },
+  { name: "Blog", slug: "/blog" },
+  { name: "Teachers", slug: "/teachers" },
+  { name: "Contact", slug: "/contact" },
+];
+
 export function Nav() {
+  const pathname = usePathname();
+
   return (
     <>
       <header className="top-navbar">
@@ -33,53 +49,19 @@ export function Nav() {
                 </h4>
               </span>
               <ul className="navbar-nav ml-auto">
-                <li className="nav-item active">
-                  <a className="nav-link" href="/">
-                    Home
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="/about">
-                    About Us
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link dropdown-toggle" href="/gallery">
-                    Gallery{" "}
-                  </a>
-                </li>
-                <li className="nav-item dropdown">
-                  <a
-                    className="nav-link dropdown-toggle"
-                    href="/blog"
-                    id="dropdown-a"
+                {NAV_LINKS.map((nav_item, index) => (
+                  <li
+                    key={nav_item.slug}
+                    className={`nav-item ${
+                      pathname === nav_item.slug ? "active" : ""
+                    }`}
                   >
-                    Blog{" "}
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="/teachers">
-                    Teachers
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="/contact">
-                    Contact
-                  </a>
-                </li>
+                    <a className="nav-link" href={nav_item.slug}>
+                      {nav_item.name}
+                    </a>
+                  </li>
+                ))}
               </ul>
-              {/* <ul className="nav navbar-nav navbar-right">
-              <li>
-                <a
-                  className="hover-btn-new log orange"
-                  href="#"
-                  data-toggle="modal"
-                  data-target="#login"
-                >
-                  <span>Admission now</span>
-                </a>
-              </li>
-            </ul> */}
             </div>
           </div>
         </nav>
