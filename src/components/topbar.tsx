@@ -1,4 +1,10 @@
+"use client";
+
+import useWindowDimensions from "@/hooks/useDimension";
+
 export function TopBar() {
+  const dimension = useWindowDimensions();
+
   return (
     <div className="top_bar" style={{ backgroundColor: "aliceblue" }}>
       <div
@@ -9,7 +15,7 @@ export function TopBar() {
           flexWrap: "wrap",
           alignItems: "center",
           justifyContent: "center",
-          fontSize: "1.1rem",
+          fontSize: "1.4rem",
         }}
       >
         <a href="tel:+91-9835749990 " style={{ paddingLeft: 9 }}>
