@@ -10,11 +10,9 @@ export function Footer() {
                   <h3>About US</h3>
                 </div>
                 <p>
-                  {" "}
-                  Integer rutrum ligula eu dignissim laoreet. Pellentesque
-                  venenatis nibh sed tellus faucibus bibendum. Sed fermentum est
-                  vitae rhoncus molestie. Cum sociis natoque penatibus et magnis
-                  dis montes.
+                  {`
+                  At Rahmani, we"re dedicated to empowering students to excel academically and personally. Through innovative programs and a nurturing environment, we inspire lifelong learners and compassionate leaders. Join us on the journey to success!
+                  `}
                 </p>
                 <div className="footer-right">
                   <ul className="footer-links-soi">

@@ -724,8 +724,8 @@ export default function Home() {
           <div className="section-title text-center">
             <h3>Teams</h3>
             <p>
-              Lorem ipsum dolor sit aet, consectetur adipisicing lit sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.{" "}
+              Join Rahmani Public School for quality education and a supportive
+              learning environment where students thrive and grow.
             </p>
           </div>
           {/* end title */}
